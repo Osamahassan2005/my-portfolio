@@ -129,7 +129,27 @@
   .project-card .btn-secondary:hover {
     background: #555;
   }
-  
+
+  /* Social Links Section */
+.social-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.social-icon img {
+  width: 40px;  
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+  transform: scale(1.1);
+}
+
+
   /* Contact Form */
   .contact-form input, .contact-form textarea {
     width: 100%;
