@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header class="hero">
-        <div class="container">
-          <h1>Welcome to My Portfolio</h1>
-          <p>I am a learner in web development, passionate about creating modern, user-friendly websites and applications.</p>
-          <a href="#contact" class="btn-primary">Hire Me</a>
-        </div>
-      </header>
-    
+  <div id="loading-bar"></div>
+  <header class="hero">
+    <h1 class="writer">Welcome To My Portfolio :)</h1>
+    <a href="#contact" class="btn-primary">Hire Me</a>
+  </header>
+
   <nav class="navbar">
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="container">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
+
 
   <main>
     <section id="about" class="section">
-        <div class="container">
-          <h2>About Me</h2>
-          <div class="about-content">
-            <img src="./profile..jpg" alt="Profile Picture" class="profile-pic">
-            <p>
-              I am Osama Hassan, an undergraduate student at NED University studying Computer Information Systems (CIS).
-               As an enthusiastic learner of web development, I specialize in frontend technologies and am expanding my knowledge in full-stack development. I am passionate about building modern, user-focused websites and applications that prioritize both functionality and design. Through continuous learning,
-               I aim to develop solutions that deliver a seamless user experience and solve real-world problems."
-            </p>
-          </div>
+      <div class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <img src="./profile..jpg" alt="Profile Picture" class="profile-pic">
+          <p>
+            I am Osama Hassan, an undergraduate student at NED University studying Computer Information Systems (CIS).
+            As an enthusiastic learner of web development, I specialize in frontend technologies and am expanding my
+            knowledge in full-stack development.
+            Through continuous learning,
+            I aim to develop solutions that deliver a seamless user experience and solve real-world problems."
+          </p>
         </div>
-      </section>
+      </div>
+    </section>
     <section id="skills" class="section bg-light">
       <div class="container">
         <h2>Skills</h2>
@@ -62,14 +67,21 @@
           </div>
           <div class="project-card">
             <h3>Project 2</h3>
-            <p>Designed a responsive and professional resume builder using HTML and CSS for clean and customizable layouts.</p>
+            <p>Designed a responsive and professional resume builder using HTML and CSS for clean and customizable
+              layouts.</p>
             <a href="https://my-resume-three-tan.vercel.app" class="btn-secondary">View Project</a>
           </div>
           <div class="project-card">
             <h3>Project 3</h3>
-            <p>Developed a console-based Tic Tac Toe game in Python, featuring two-player gameplay, winner detection, and input validation.</p>
+            <p>Developed a console-based Tic Tac Toe game in Python, featuring two-player gameplay, winner detection,
+              and input validation.</p>
             <a href="https://github.com/Osamahassan2005/tic-tac-toe" class="btn-secondary">View Project</a>
           </div>
+          <div>
+            <h2>New projects coming soon...</h2>
+            <progress value="50" max="100"></progress>
+          </div>
+
         </div>
       </div>
     </section>
@@ -77,20 +89,10 @@
     <section id="contact" class="section bg-light">
       <div class="container">
         <h2>Contact Me</h2>
-        <p>If you have any questions, want to collaborate, or need assistance with a project, feel free to reach out !</p>
-    
-        <div class="social-links">
-          <a href="mailto:hssan10997@gmail.com" target="_blank" class="social-icon">
-            <img src="gm.jpg" alt="Gmail Icon">
-          </a>
-          <a href="https://www.linkedin.com/in/osama-hassan-532362308?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-icon">
-            <img src="link.jpg" alt="LinkedIn Icon">
-          </a>
-          <a href="https://github.com/Osamahassan2005" target="_blank" class="social-icon">
-            <img src="git.jpg" alt="GitHub Icon">
-          </a>
-        </div>
-    
+        <p>If you have any questions, want to collaborate, or need assistance with a project, feel free to reach out !
+        </p>
+
+
         <form class="contact-form">
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Your Email" required>
@@ -98,14 +100,80 @@
           <button type="submit" class="btn-primary">Send Message</button>
         </form>
       </div>
+
     </section>
-    
+
   </main>
 
   <footer class="footer">
+    <div class="social-links">
+      <a href="mailto:hssan10997@gmail.com" target="_blank" class="social-icon">
+        <img src="gm.jpg" alt="Gmail Icon">
+      </a>
+      <a href="https://www.linkedin.com/in/osama-hassan-532362308?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        target="_blank" class="social-icon">
+        <img src="link.jpg" alt="LinkedIn Icon">
+      </a>
+      <a href="https://github.com/Osamahassan2005" target="_blank" class="social-icon">
+        <img src="git.jpg" alt="GitHub Icon">
+      </a>
+    </div>
+
     <div class="container">
       <p>&copy; 2024 Osama. All Rights Reserved.</p>
     </div>
+
+
   </footer>
 </body>
+<script>
+  // Get the navigation links and loading bar
+  const navLinks = document.querySelectorAll('.navbar a');
+  const loadingBar = document.getElementById('loading-bar');
+
+  // Function to start loading bar
+  function startLoadingBar() {
+    let width = 0;
+    loadingBar.style.width = '0%';  // Reset the loading bar
+    loadingBar.style.transition = 'none';  // Disable transition for instant reset
+    setTimeout(() => {
+      loadingBar.style.transition = 'width 1s ease-out';  // Enable smooth transition after reset
+      let interval = setInterval(function () {
+        if (width >= 100) {
+          clearInterval(interval);
+          loadingBar.style.width = '100%';
+        } else {
+          width++;
+          loadingBar.style.width = width + '%';
+        }
+      }, 10);
+    }, 0);
+  }
+
+  // Function to handle smooth scrolling
+  function smoothScroll(target) {
+    document.querySelector(target).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+
+  // Add click event listeners to each navigation link
+  navLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();  // Prevent default anchor link behavior
+      const targetSection = link.getAttribute('href');  // Get the section to scroll to
+
+      // Start the loading bar and scroll to the section
+      startLoadingBar();
+      smoothScroll(targetSection);
+
+      // Optionally, hide the loading bar after scroll completion (add more logic if needed)
+      setTimeout(() => {
+        loadingBar.style.width = '100%';  // Set loading bar to full width after scroll
+      }, 1000);  // Adjust time as needed to match scroll duration
+    });
+  });
+</script>
+
 </html>
